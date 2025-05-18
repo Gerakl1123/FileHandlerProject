@@ -16,14 +16,14 @@ std::string FileHandl::writeline(const std::string& line)
 std::shared_ptr<FileHandl> FileHandl::createFileHandler(const std::string& filename)
 {
 	auto file = std::shared_ptr<FileHandl>(new FileHandl(filename), [](FileHandl* del) {
-		std::cout << "FileHandler çàêðûò è ôàéë çàêðûò\n";
+		std::cout << "FileHandler Ã§Ã ÃªÃ°Ã»Ã² Ã¨ Ã´Ã Ã©Ã« Ã§Ã ÃªÃ°Ã»Ã²\n";
 		delete del;
 		});
 	return file;
 }
 
 
-void FileHandl::writeToFile(std::shared_ptr<FileHandl> handler, const std::string& data)
+void FileHandl::writeToFile(std::shared_ptr<FileHandl>& handler, const std::string& data)
 {
 	handler->writeline(data);
 
